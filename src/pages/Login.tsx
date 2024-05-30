@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
     const [IsCode, setIsCode] = useState<string>("");
+    
     useEffect(() => {
         setIsCode("aaaaaaaaaaaaaaaaaaaaaaaaaaaa");
     }, []);
@@ -39,14 +40,11 @@ const Login = () => {
                     <div className="divider">Hoặc</div>
                     <div className="flex gap-2 justify-center w-full">
                         <Link
-                            to={"https://openxss-server.onrender.com/auth/zalo/login"}
-                            className="btn btn-primary text-white w-1/2"
+                            to={"https://openxss-server.onrender.com/discord/login"}
+                            className="btn btn-primary text-white w-full"
                         >
-                            <button>Zalo</button>
+                            <button>Discord</button>
                         </Link>
-                        <button className="btn btn-primary text-white w-1/2">
-                            Google
-                        </button>
                     </div>
                 </div>
             </div>

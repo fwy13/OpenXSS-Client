@@ -14,9 +14,9 @@
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
+    "framer-motion": "^11.2.9",
     "qrcode.react": "^3.1.0",
     "react": "^18.2.0",
-    "react-cookie": "^7.1.4",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
