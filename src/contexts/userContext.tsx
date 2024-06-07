@@ -33,7 +33,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
     const GetUserData = async () => {
         setIsLoading(true);
         const data: Response = await axios.get(
-            "https://openxss-server.onrender.com/user/discord",
+            "http://192.168.1.7:8080/user/discord",
             {
                 withCredentials: true,
             }

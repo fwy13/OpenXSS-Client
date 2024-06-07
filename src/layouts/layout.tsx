@@ -16,13 +16,59 @@ const Layout = () => {
     const { IsUser, Error, IsLoading } = useContext(UserContext);
     const navigate = useNavigate();
 
+    const changeTheme = ({ theme }: { theme: string }) => {
+        localStorage.setItem("theme", theme);
+    };
+
+    const setThemeReload = () => {
+        const getTheme: string = localStorage.getItem("theme") ?? "";
+        const Themes = document.querySelectorAll(".themes > li");
+        Themes.forEach((item) => {
+            const CheckThemeinEl = item.innerHTML.includes(getTheme);
+            if (CheckThemeinEl) {
+                item.setAttribute("class", "bg-primary");
+                document
+                    .querySelector("html")
+                    ?.setAttribute("data-theme", getTheme);
+            }
+        });
+    };
+
+    useEffect(() => {
+        setThemeReload();
+    }, []);
+
     useEffect(() => {
         if (Error) {
             navigate("/login");
         }
     }, [Error]);
 
-    const ListTheme: string[] = ["light", "dark", "cupcake", "corporate"];
+    const ListTheme: string[] = [
+        "light",
+        "dark",
+        "aqua",
+        "pastel",
+        "dracula",
+        "cmyk",
+        "autumn",
+        "acid",
+        "lemonade",
+        "night",
+        "coffee",
+        "winter",
+        "dim",
+        "cupcake",
+        "bumblebee",
+        "emerald",
+        "synthwave",
+        "retro",
+        "cyberpunk",
+        "valentine",
+        "halloween",
+        "garden",
+        "forest",
+    ];
     return (
         <div>
             <div className="drawer fixed top-0">
@@ -74,7 +120,7 @@ const Layout = () => {
                                 </div>
                                 <ul
                                     tabIndex={0}
-                                    className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+                                    className="dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 themes"
                                 >
                                     {ListTheme.map(
                                         (theme: string, index: number) => (
@@ -85,6 +131,9 @@ const Layout = () => {
                                                     className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
                                                     aria-label={theme.toUpperCase()}
                                                     value={theme}
+                                                    onClick={() => {
+                                                        changeTheme({ theme });
+                                                    }}
                                                 />
                                             </li>
                                         )
@@ -179,10 +228,10 @@ const Layout = () => {
                                             </svg>
                                             QR đăng nhập
                                         </button>
-                                        <button
-                                            onClick={() => {
-                                                navigate("/login");
-                                            }}
+                                        <Link
+                                            to={
+                                                "http://192.168.1.7:8080/logout"
+                                            }
                                             className="btn btn-sm btn-block btn-ghost rounded"
                                         >
                                             <svg
@@ -200,7 +249,7 @@ const Layout = () => {
                                                 />
                                             </svg>
                                             Đăng xuất
-                                        </button>
+                                        </Link>
                                     </div>
                                 </div>
                             )}

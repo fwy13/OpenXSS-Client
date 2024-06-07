@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.Group-Emoji::-webkit-scrollbar {
+    width: 10px;
+}
+
+.Group-Emoji::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.Group-Emoji::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.Group-Emoji::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
