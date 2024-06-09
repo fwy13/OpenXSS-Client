@@ -230,7 +230,7 @@ const Layout = () => {
                                         </button>
                                         <Link
                                             to={
-                                                "http://192.168.1.7:8080/logout"
+                                                "http://localhost:3000/logout"
                                             }
                                             className="btn btn-sm btn-block btn-ghost rounded"
                                         >

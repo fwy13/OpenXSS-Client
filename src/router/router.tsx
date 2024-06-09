@@ -3,6 +3,7 @@ import Home from "../pages/Home";
 import Layout from "../layouts/layout";
 import Login from "../pages/Login";
 import Error404 from "../pages/Error404";
+import Admin from "../pages/Admin";
 
 const routers = createBrowserRouter([
     {
@@ -16,6 +17,10 @@ const routers = createBrowserRouter([
     {
         path: "/login",
         element: <Login />,
+    },
+    {
+        path: "/admin",
+        element: <Admin />,
     },
 ]);
 export default routers;

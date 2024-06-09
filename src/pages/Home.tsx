@@ -1,8 +1,5 @@
-import { useContext } from "react";
-import { UserContext } from "../contexts/userContext";
 
 const Home = () => {
-    const { IsUser } = useContext(UserContext);
     return (
         <div className="flex flex-col w-full items-center">
             <h1 className="text-[1.5em] text-info mb-2">Tổng quan</h1>
